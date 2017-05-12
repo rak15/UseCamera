@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UseCamera</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="camera_button">&#xf030; Take Picture</string>
+
+</resources>
