@@ -26,14 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Typeface font = Typeface.createFromAsset( getAssets(), "fontawesome-webfont.ttf" );
         Button btnCamera = (Button) findViewById(R.id.btnCamera);
-
         capturedImage= (ImageView) findViewById(R.id.capturedImage);
-
         btnCamera.setTypeface(font);
-
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -59,9 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (photo!=null){
-                Uri imageUri=Uri.fromFile(photo);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-
+                Uri imageUri=Uri.fromFile(photo);    //uri of file created where image will be saved
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);  // putting image in file
             }
             startActivityForResult(intent, 1);
         }
